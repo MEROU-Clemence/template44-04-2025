@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="{{CurrentLang.IsoLang}}" culture="{{CurrentLang.CultureLang}}">
+<head>
+    <title>{{CustomTitle}} - {{City}} - {{Country}}</title>
+    <meta name="description" content="{{Descriptions.0.DescLength150}}">
+    {{>CommonMetaTags}}
+    <link rel="canonical" href="{{UrlRoot}}" />
+    <meta property="og:url" content="{{UrlRoot}}" />
+    <meta property="og:title" content="{{CustomTitle}}" />
+    <meta property="og:image" content="{{#Photos.0}}{{UrlMedias}}/crop-300x200/{{IdMedia}}/{{FileNamePhoto}}{{/Photos.0}}" />
+    <meta property="og:description" content="{{Descriptions.0.DescLength150}}" />
+    {{>FaviconTags}}
+    {{>CommonStylesheets}}
+    <link rel="stylesheet" href="https://static.elloha.com/webgen/css/newcookieconsent.css">
+    {{#HasBookingActivated}}{{>ScriptCalendarClick}}{{/HasBookingActivated}}
+</head>
+<body>
+    {{{ScriptAnalytics}}}
+    {{{GoogleTagManagerBody}}}
+
+    <header>
+        <div class="first-nav">
+            <div class="menu-and-contacts">
+                <div class="navbar-toggler-contain {{^HasRecommandations}}no-around{{/HasRecommandations}}">
+                    <div class="navbar-toggler">
+                        <div class="menu-name btn-menu">{{ResourcesTemplate.Menu}}</div>
+                    </div>
+
+                    <a class="menu-name menu-name-desk" href="{{UrlRoot}}">{{ResourcesTemplate.Home}}</a>
+
+                    {{#HasRecommandations}}
+                    <a class="menu-name menu-name-tab" href="{{UrlAround}}">{{ResourcesTemplate.pageMenuTitle_around}}</a>
+                    {{/HasRecommandations}}
+                </div>
+
+                <div class="contacts-and-lang">
+                    {{#HasSocialNetworks}}
+                    {{#TikTok}}
+                    <a href="{{TikTok}}" class="contact-header contact-header-desk" target="_blank">
+                        <i class="fab fa-tiktok"></i>
+                    </a>
+                    {{/TikTok}}
+
+                    {{#Facebook}}
+                    <a href="{{Facebook}}" class="contact-header contact-header-desk {{^HasRecommandations}}contact-header-no-around{{/HasRecommandations}}" target="_blank">
+                        <i class="lab la-facebook-f"></i>
+                    </a>
+                    {{/Facebook}}
+
+                    {{#Twitter}}
+                    <a href="{{Twitter}}" class="contact-header contact-header-desk" target="_blank">
+                        <i class="lab la-twitter"></i>
+                    </a>
+                    {{/Twitter}}
+
+                    {{#Pinterest}}
+                    <a href="{{Pinterest}}" class="contact-header contact-header-desk" target="_blank">
+                        <i class="lab la-pinterest"></i>
+                    </a>
+                    {{/Pinterest}}
+
+                    {{#Youtube}}
+                    <a href="{{Youtube}}" class="contact-header contact-header-desk" target="_blank">
+                        <i class="lab la-youtube"></i>
+                    </a>
+                    {{/Youtube}}
+
+                    {{#Instagram}}
+                    <a href="{{Instagram}}" class="contact-header contact-header-desk {{^HasRecommandations}}contact-header-no-around{{/HasRecommandations}}" target="_blank">
+                        <i class="lab la-instagram"></i>
+                    </a>
+                    {{/Instagram}}
+
+                    {{#Vimeo}}
+                    <a href="{{Vimeo}}" class="contact-header contact-header-desk" target="_blank">
+                        <i class="lab la-vimeo"></i>
+                    </a>
+                    {{/Vimeo}}
+
+                    {{#Linkedin}}
+                    <a href="{{Linkedin}}" class="contact-header contact-header-desk" target="_blank">
+                        <i class="lab la-linkedin-in"></i>
+                    </a>
+                    {{/Linkedin}}
+                    {{/HasSocialNetworks}}
+
+                    {{#HasPhoneNumberActivated}}
+                    <a href="tel:{{PhoneNumber}}" class="contact-header">
+                        <i class="las la-phone"></i>
+                    </a>
+                    {{/HasPhoneNumberActivated}}
+
+                    {{#HasMobilePhoneNumberActivated}}
+                    <a href="tel:{{MobilePhoneNumber}}" class="contact-header contact-header-desk">
+                        <i class="las la-mobile"></i>
+                    </a>
+                    {{/HasMobilePhoneNumberActivated}}
+
+                    {{#HasOtherLangs}}
+                    <div class="dropdown languages">
+                        <div class="dropdown-div" data-toggle="dropdown">
+                            <div class="current-lang flag">{{CurrentLang.IsoLang}}</div>
+                        </div>
+                        <ul class="dropdown-menu">
+                            {{#Langs}}
+                            <li><a href="{{UrlLang}}" lang="{{IsoLang}}"><div class="flag">{{IsoLang}}</div></a></li>
+                            {{/Langs}}
+                        </ul>
+                    </div>
+                    {{/HasOtherLangs}}
+
+                    <a href="{{UrlRoot}}#section-contact" class="contact-header contact-header-desk">
+                        <i class="la la-at"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="logo logo-w">
+                <a class="logo-top {{^HasLogo}} logo-text{{/HasLogo}}" href="{{UrlRoot}}">
+                    {{#HasLogo}}<img src="{{LogoUrl}}" alt="{{CustomTitle}}">{{/HasLogo}}
+                    {{^HasLogo}}<span class="title">{{CustomTitle}}</span>{{/HasLogo}}
+                </a>
+            </div>
+        </div>
+
+        <div class="menu-header">
+            <div></div>
+
+            <ul class="menu-pages">
+                <li>
+                    <a href="{{UrlRoot}}">{{ResourcesTemplate.Home}}</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+                        <path d="M7 0.0649414L7.32253 4.87077C7.34669 5.23079 7.79761 5.3773 8.02877 5.10024L11.1145 1.40182L8.55063 5.4794C8.35857 5.78486 8.63725 6.16844 8.98711 6.08016L13.6574 4.90182L9.18645 6.69365C8.85152 6.82788 8.85151 7.302 9.18644 7.43623L13.6574 9.22806L8.98711 8.04972C8.63725 7.96145 8.35857 8.34502 8.55063 8.65048L11.1145 12.7281L8.02877 9.02964C7.79761 8.75258 7.34669 8.89909 7.32253 9.25911L7 14.0649L6.67747 9.25911C6.65331 8.89909 6.20239 8.75258 5.97123 9.02964L2.8855 12.7281L5.44937 8.65048C5.64143 8.34502 5.36275 7.96145 5.01289 8.04972L0.342604 9.22806L4.81355 7.43623C5.14848 7.302 5.14848 6.82788 4.81356 6.69365L0.342604 4.90182L5.01289 6.08016C5.36275 6.16844 5.64143 5.78486 5.44937 5.4794L2.8855 1.40182L5.97123 5.10024C6.20239 5.3773 6.65331 5.23079 6.67747 4.87077L7 0.0649414Z" fill="var(--color-bg-3)" />
+                    </svg>
+                </li>
+                {{#HasRecommandations}}
+                <li class="li-mobile">
+                    <a href="{{UrlAround}}">{{ResourcesTemplate.pageMenuTitle_around}}</a>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="15" viewBox="0 0 14 15" fill="none">
+                      <path d="M7 0.0649414L7.32253 4.87077C7.34669 5.23079 7.79761 5.3773 8.02877 5.10024L11.1145 1.40182L8.55063 5.4794C8.35857 5.78486 8.63725 6.16844 8.98711 6.08016L13.6574 4.90182L9.18645 6.69365C8.85152 6.82788 8.85151 7.302 9.18644 7.43623L13.6574 9.22806L8.98711 8.04972C8.63725 7.96145 8.35857 8.34502 8.55063 8.65048L11.1145 12.7281L8.02877 9.02964C7.79761 8.75258 7.34669 8.89909 7.32253 9.25911L7 14.0649L6.67747 9.25911C6.65331 8.89909 6.20239 8.75258 5.97123 9.02964L2.8855 12.7281L5.44937 8.65048C5.64143 8.34502 5.36275 7.96145 5.01289 8.04972L0.342604 9.22806L4.81355 7.43623C5.14848 7.302 5.14848 6.82788 4.81356 6.69365L0.342604 4.90182L5.01289 6.08016C5.36275 6.16844 5.64143 5.78486 5.44937 5.4794L2.8855 1.40182L5.97123 5.10024C6.20239 5.3773 6.65331 5.23079 6.67747 4.87077L7 0.0649414Z" fill="var(--color-bg-3)"/>
+                    </svg>
+                </li>
+                {{/HasRecommandations}}
+            </ul>
+
+            {{#HasSocialNetworks}}
+            <div class="social-medias">
+                {{#TikTok}}<a href="{{TikTok}}" target="_blank"><i class="fab fa-tiktok"></i></a>{{/TikTok}}
+                {{#Facebook}}<a href="{{Facebook}}" target="_blank"><i class="lab la-facebook-f"></i></a>{{/Facebook}}
+                {{#Twitter}}<a href="{{Twitter}}" target="_blank"><i class="lab la-twitter"></i></a>{{/Twitter}}
+                {{#Pinterest}}<a href="{{Pinterest}}" target="_blank"><i class="lab la-pinterest"></i></a>{{/Pinterest}}
+                {{#Youtube}}<a href="{{Youtube}}" target="_blank"><i class="lab la-youtube"></i></a>{{/Youtube}}
+                {{#Instagram}}<a href="{{Instagram}}" target="_blank"><i class="lab la-instagram"></i></a>{{/Instagram}}
+                {{#Vimeo}}<a href="{{Vimeo}}" target="_blank"><i class="lab la-vimeo"></i></a>{{/Vimeo}}
+                {{#Linkedin}}<a href="{{Linkedin}}" target="_blank"><i class="lab la-linkedin-in"></i></a>{{/Linkedin}}
+            </div>
+            {{/HasSocialNetworks}}
+        </div>
+    </header>
+
+    <main>
+        <!-- SECTION WIDGET BE -->
+        <section class="section-widget-be-contain">
+            <div class="bg-img" style="background-image: url({{#Photos.0}}{{UrlMedias}}/crop-2600x2600/{{IdMedia}}/{{FileNamePhoto}}{{/Photos.0}});" draggable="false">
+                <div class="opacity"></div>
+            </div>
+
+            <div class="title-principal-and-widget-be">
+                <div class="content-section-header">
+                    <div class="div-empty"></div>
+
+                    <div class="bloc-title-header">
+                        <svg class="star" xmlns="http://www.w3.org/2000/svg" width="45" height="47" viewBox="0 0 45 47" fill="none">
+                            <path d="M22.5 0L23.7403 18.4812C23.7645 18.8412 24.2154 18.9877 24.4465 18.7107L36.313 4.4881L26.4534 20.1687C26.2613 20.4742 26.54 20.8578 26.8899 20.7695L44.8498 16.2381L27.6564 23.1287C27.3215 23.2629 27.3215 23.7371 27.6564 23.8713L44.8498 30.7619L26.8899 26.2305C26.54 26.1422 26.2613 26.5258 26.4534 26.8313L36.313 42.5119L24.4465 28.2893C24.2154 28.0123 23.7645 28.1588 23.7403 28.5188L22.5 47L21.2597 28.5188C21.2355 28.1588 20.7846 28.0123 20.5535 28.2893L8.68705 42.5119L18.5466 26.8313C18.7387 26.5258 18.46 26.1422 18.1101 26.2305L0.150171 30.7619L17.3436 23.8713C17.6785 23.7371 17.6785 23.2629 17.3436 23.1287L0.150171 16.2381L18.1101 20.7695C18.46 20.8578 18.7387 20.4742 18.5466 20.1687L8.68705 4.4881L20.5535 18.7107C20.7846 18.9877 21.2355 18.8412 21.2597 18.4812L22.5 0Z" fill="var(--color-bg-3)" />
+                        </svg>
+                        <h1>{{CustomTitle}}</h1>
+                        <span>{{CustomTypeOi}}</span>
+                    </div>
+
+                    <div class="section-widget-be">
+                        {{#HasBookingActivated}}
+                        <div id="section-BE" class="section-BE-home">
+                            <div class="check-availability">
+                                <div class="rounded-box">
+                                    {{>Widget-BE}}
+                                    {{>Widget-BE-secure}}
+                                </div>
+                            </div>
+                        </div>
+                        {{/HasBookingActivated}}
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION PRESENTATION & METEO -->
+        <section class="section section-pres-and-meteo">
+            <div class="content-section">
+
+                <div class="title-and-descrip-pres">
+                    <div class="section-title section-title-with-svg">
+                        <h2>{{CustomTitle}}</h2>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20" fill="none">
+                            <path d="M9.5 0.5L9.96159 7.37786C9.98575 7.73787 10.4367 7.88439 10.6678 7.60733L15.084 2.31434L11.4147 8.14996C11.2226 8.45542 11.5013 8.83899 11.8512 8.75072L18.535 7.06434L12.1364 9.62871C11.8015 9.76294 11.8015 10.2371 12.1364 10.3713L18.535 12.9357L11.8512 11.2493C11.5013 11.161 11.2226 11.5446 11.4147 11.85L15.084 17.6857L10.6678 12.3927C10.4367 12.1156 9.98575 12.2621 9.96159 12.6221L9.5 19.5L9.03841 12.6221C9.01425 12.2621 8.56333 12.1156 8.33217 12.3927L3.91604 17.6857L7.58531 11.85C7.77738 11.5446 7.49869 11.161 7.14883 11.2493L0.464963 12.9357L6.86356 10.3713C7.19848 10.2371 7.19848 9.76294 6.86356 9.62871L0.464963 7.06434L7.14883 8.75072C7.49869 8.83899 7.77738 8.45542 7.58531 8.14996L3.91604 2.31434L8.33217 7.60733C8.56333 7.88439 9.01425 7.73787 9.03841 7.37786L9.5 0.5Z" fill="var(--color-bg-3)" />
+                        </svg>
+                    </div>
+
+                    <div class="descrip-and-name">
+                        <div class="description-contain">
+                            <div class="description">{{{Descriptions.0.LibelleDescHtml}}}</div>
+
+                            <div id="seeMore2" class="more-less-btn-contain">
+                                <a href="#" class="more-less-btn">{{ResourcesTemplate.SeeMore}}</a>
+                            </div>
+                            <div id="seeLess2" class="more-less-btn-contain">
+                                <a href="#" class="more-less-btn">{{ResourcesTemplate.SeeLess}}</a>
+                            </div>
+                        </div>
+
+                        <div class="name-user-contain">
+                            <span class="name-user">{{NameUser}}</span>
+
+                            <div class="hr-name"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="capacity-and-meteo">
+                    <div class="presta-infos">
+                        {{#Prestations.0.MinPricePresta}}
+                        <div class="price-presta-from">
+                            <span>{{ResourcesTemplate.PriceFrom}}</span>
+                            <span class="price-price">{{Prestations.0.MinPricePresta}}{{CurrencySymbol}}/{{ResourcesTemplate.Night}}</span>
+                        </div>
+                        {{/Prestations.0.MinPricePresta}}
+
+                        <div class="infos-content">
+                            {{#Prestations.0.MaxCapacityPresta}}
+                            <div class="infos-and-picto">
+                                <em class="icon-post-padding las la-user"></em>
+                                <div class="infos-presta">
+                                    <span>{{ResourcesTemplate.MaxCapacity}} <strong>{{Prestations.0.MaxCapacityPresta}} {{ResourcesTemplate.CapacityPersons}}</strong></span>
+                                </div>
+                            </div>
+                            {{/Prestations.0.MaxCapacityPresta}}
+
+                            {{#Prestations.0.CheckinTime}}
+                            <div class="infos-and-picto">
+                                <em class="icon-post-padding las la-clock"></em>
+                                <div class="infos-presta">
+                                    <span>{{ResourcesTemplate.CheckinTime}}: <strong>{{Prestations.0.CheckinTimeString}}</strong></span>
+                                </div>
+                            </div>
+                            {{/Prestations.0.CheckinTime}}
+
+                            {{#Prestations.0.CheckoutTime}}
+                            <div class="infos-and-picto">
+                                <em class="icon-post-padding las la-clock"></em>
+                                <div class="infos-presta">
+                                    <span>{{ResourcesTemplate.CheckoutTime}}: <strong>{{Prestations.0.CheckoutTimeString}}</strong></span>
+                                </div>
+                            </div>
+                            {{/Prestations.0.CheckoutTime}}
+
+                            {{#Prestations.0.NbSimpleBeds}}
+                            <div class="infos-and-picto">
+                                <em class="icon-post-padding las la-bed"></em>
+                                <div class="infos-presta">
+                                    <span>{{ResourcesTemplate.SimpleBeds}} <strong>{{Prestations.0.NbSimpleBeds}}</strong></span>
+                                </div>
+                            </div>
+                            {{/Prestations.0.NbSimpleBeds}}
+
+                            {{#Prestations.0.NbDoubleBeds}}
+                            <div class="infos-and-picto">
+                                <em class="icon-post-padding las la-bed"></em>
+                                <div class="infos-presta">
+                                    <span>{{ResourcesTemplate.DoubleBeds}} <strong>{{Prestations.0.NbDoubleBeds}}</strong></span>
+                                </div>
+                            </div>
+                            {{/Prestations.0.NbDoubleBeds}}
+
+                            {{#Prestations.0.NbKingBeds}}
+                            <div class="infos-and-picto">
+                                <em class="icon-post-padding las la-bed"></em>
+                                <div class="infos-presta">
+                                    <span>{{ResourcesTemplate.KingBeds}} <strong>{{Prestations.0.NbKingBeds}}</strong></span>
+                                </div>
+                            </div>
+                            {{/Prestations.0.NbKingBeds}}
+
+                            {{#Prestations.0.NbQueenBeds}}
+                            <div class="infos-and-picto">
+                                <em class="icon-post-padding las la-bed"></em>
+                                <div class="infos-presta">
+                                    <span>{{ResourcesTemplate.QueenBeds}} <strong>{{Prestations.0.NbQueenBeds}}</strong></span>
+                                </div>
+                            </div>
+                            {{/Prestations.0.NbQueenBeds}}
+
+                            {{#Prestations.0.NbBunkBeds}}
+                            <div class="infos-and-picto">
+                                <em class="icon-post-padding las la-bed"></em>
+                                <div class="infos-presta">
+                                    <span>{{ResourcesTemplate.BunkBeds}} <strong>{{Prestations.0.NbBunkBeds}}</strong></span>
+                                </div>
+                            </div>
+                            {{/Prestations.0.NbBunkBeds}}
+
+                            {{#Prestations.0.NbSofaBeds}}
+                            <div class="infos-and-picto">
+                                <em class="icon-post-padding las la-bed"></em>
+                                <div class="infos-presta">
+                                    <span>{{ResourcesTemplate.SofaBeds}} <strong>{{Prestations.0.NbSofaBeds}}</strong></span>
+                                </div>
+                            </div>
+                            {{/Prestations.0.NbSofaBeds}}
+
+                            {{#Prestations.0.NbSofaDoubleBeds}}
+                            <div class="infos-and-picto">
+                                <em class="icon-post-padding las la-bed"></em>
+                                <div class="infos-presta">
+                                    <span>{{ResourcesTemplate.SofaDoubleBeds}} <strong>{{Prestations.0.NbSofaDoubleBeds}}</strong></span>
+                                </div>
+                            </div>
+                            {{/Prestations.0.NbSofaDoubleBeds}}
+
+                            {{#Prestations.0.NbMurphyBeds}}
+                            <div class="infos-and-picto">
+                                <em class="icon-post-padding las la-bed"></em>
+                                <div class="infos-presta">
+                                    <span>{{ResourcesTemplate.MurphyBeds}} <strong>{{Prestations.0.NbMurphyBeds}}</strong></span>
+                                </div>
+                            </div>
+                            {{/Prestations.0.NbMurphyBeds}}
+
+                            {{#Prestations.0.HasExtraBeds}}
+                            <div class="infos-and-picto">
+                                <em class="icon-post-padding las la-bed"></em>
+                                <div class="infos-presta">
+                                    <span>{{ResourcesTemplate.ExtraBeds}} <strong>{{ResourcesTemplate.Yes}}</strong></span>
+                                </div>
+                            </div>
+                            {{/Prestations.0.HasExtraBeds}}
+
+                            {{#CurrentPrestation.HasBabyBeds}}
+                            <div class="infos-and-picto">
+                                <em class="icon-post-padding las la-bed"></em>
+                                <div class="infos-presta">
+                                    <span>{{ResourcesTemplate.BabyBeds}} <strong>{{ResourcesTemplate.Yes}}</strong></span>
+                                </div>
+                            </div>
+                            {{/CurrentPrestation.HasBabyBeds}}
+                        </div>
+                    </div>
+
+                    <div class="avatar-and-meteo">
+                        {{#HasAvatar}}
+                        <div class="avatar bg-img" style="background-image: url({{PhotoUserUrl}});" alt="{{NamePhoto}}-avatar"></div>
+                        {{/HasAvatar}}
+
+                        <div class="meteo-contain">
+                            {{! Current conditions }}
+                            <div class="section-meteo weather-item">
+                                <div class="temperature-and-trad">
+                                    <canvas id="WeatherCcIcon" data="{{CurrentWeather.WeatherIcon}}" class="weather-icon"></canvas>
+                                    <span class="temperature" id="WeatherCcTemperature">{{CurrentWeather.WeatherTemperature}}°{{CurrentLang.TemperatureUnit}}</span>
+
+                                    <div class="weather-trad" data="{{CurrentWeather.WeatherIcon}}"></div>
+                                </div>
+
+                                <div class="city">{{City}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        {{#HasOptions}}
+        <!-- SECTION OPTIONS -->
+        <section class="section section-options">
+            <div class="content-section">
+
+                <div class="section-title">
+                    <h2>{{ResourcesTemplate.ForYourConfort}}</h2>
+                </div>
+
+                <div class="owl-carousel owl-theme slider-options">
+                    {{#Options}}
+                    <div class="presta-contain">
+                        <div class="bg-img" style="background-image: url({{#PhotosPresta.0}}{{UrlMedias}}/crop-700x500/{{IdMedia}}/{{FileNamePhoto}}{{/PhotosPresta.0}});" alt="{{NamePhoto}}-options">
+                            <div class="opacity-2">
+
+                                <h3>{{TitrePresta}}</h3>
+
+                            </div>
+                        </div>
+                        <div class="infos-contain">
+                            {{#MinPricePresta}}
+                            <div class="saw-prices">
+                                <span class="price-from">{{ResourcesTemplate.PriceFrom}}</span>
+                                <span class="price">{{MinPricePresta}}{{CurrencySymbol}}</span>
+                            </div>
+                            {{/MinPricePresta}}
+
+                            {{#HasBookingActivated}}
+                            <a class="btn" href="{{{UrlBECustom}}}/Search/Index/{{IdPubBe}}?idoi={{IdOi}}&searchFirstAvailableDates=1&culture={{CurrentLang.CultureLang}}&forcedTemplate={{UrlTemplateBE}}">
+                                {{ResourcesTemplate.Book}}
+                            </a>
+                            {{/HasBookingActivated}}
+                        </div>
+                    </div>
+                    {{/Options}}
+                </div>
+
+            </div>
+        </section>
+        {{/HasOptions}}
+
+        <!-- SECTION DECO -->
+        <section class="section-deco">
+            <div class="content-section">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="30" viewBox="0 0 16 30" fill="none">
+                    <path d="M1.00003 9.05545L1.69043 1L1.03798 9.05983L1.00003 9.05545Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M2.42095 9.38909L4.20898 4.59668L2.44868 9.39785" fill="white" />
+                    <path d="M2.42095 9.38909L4.20898 4.59668L2.44868 9.39785" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M5.73199 17.8193L10.251 20.1659L5.71885 17.8441" fill="white" />
+                    <path d="M5.73199 17.8193L10.251 20.1659L5.71885 17.8441" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M6.22673 16.4404L11.1865 17.6371L6.21943 16.474" fill="white" />
+                    <path d="M6.22673 16.4404L11.1865 17.6371L6.21943 16.474" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M6.38288 14.996L15.8193 14.9785L6.38288 15.0296" fill="white" />
+                    <path d="M6.38288 14.996L15.8193 14.9785L6.38288 15.0296" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M6.19253 13.5505L11.1465 12.3057L6.19983 13.5782" fill="white" />
+                    <path d="M6.19253 13.5505L11.1465 12.3057L6.19983 13.5782" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M10.1719 9.7959L5.67624 12.2213" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M4.81841 11.0022L10.8379 5.39551L4.84322 11.0285" fill="white" />
+                    <path d="M4.81841 11.0022L10.8379 5.39551L4.84322 11.0285" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M3.71883 10.0495L6.60742 5.83203L3.7451 10.067" fill="white" />
+                    <path d="M3.71883 10.0495L6.60742 5.83203L3.7451 10.067" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M2.52663 20.7402C2.53538 20.7373 2.5456 20.7344 2.55436 20.7285L4.37305 25.4523L2.52663 20.7402Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M1.12989 21.1011L1.67871 29.822L1.1007 21.104C1.10946 21.104 1.11968 21.1011 1.12989 21.0996L1.12989 21.1011Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M4.89956 19.0614L4.89518 19.0585L4.90978 19.0454L4.92145 19.0352L10.9453 24.7221L4.89956 19.0614Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M6.64062 24.1576L3.71408 20.0175L3.74036 19.9941L3.74328 19.9971L6.64062 24.1576Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                </svg>
+
+                <div class="hr-name"></div>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="30" viewBox="0 0 16 30" fill="none">
+                    <path d="M15 21.7658L14.3096 29.8213L14.962 21.7615L15 21.7658Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M13.5791 21.4322L11.791 26.2246L13.5513 21.4234" fill="white" />
+                    <path d="M13.5791 21.4322L11.791 26.2246L13.5513 21.4234" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M10.268 13.002L5.74902 10.6554L10.2811 12.9771" fill="white" />
+                    <path d="M10.268 13.002L5.74902 10.6554L10.2811 12.9771" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M9.77327 14.3809L4.81348 13.1842L9.78057 14.3473" fill="white" />
+                    <path d="M9.77327 14.3809L4.81348 13.1842L9.78057 14.3473" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M9.61712 15.8253L0.180664 15.8428L9.61712 15.7917" fill="white" />
+                    <path d="M9.61712 15.8253L0.180664 15.8428L9.61712 15.7917" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M9.80747 17.2708L4.85352 18.5156L9.80017 17.2431" fill="white" />
+                    <path d="M9.80747 17.2708L4.85352 18.5156L9.80017 17.2431" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M5.82812 21.0254L10.3238 18.6" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M11.1816 19.8191L5.16211 25.4258L11.1568 19.7928" fill="white" />
+                    <path d="M11.1816 19.8191L5.16211 25.4258L11.1568 19.7928" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M12.2812 20.7718L9.39258 24.9893L12.2549 20.7543" fill="white" />
+                    <path d="M12.2812 20.7718L9.39258 24.9893L12.2549 20.7543" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M13.4734 10.0811C13.4646 10.084 13.4544 10.0869 13.4456 10.0928L11.627 5.36895L13.4734 10.0811Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M14.8701 9.72022L14.3213 0.999321L14.8993 9.7173C14.8905 9.7173 14.8803 9.72022 14.8701 9.72168L14.8701 9.72022Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M11.1004 11.7599L11.1048 11.7628L11.0902 11.7759L11.0785 11.7861L5.05469 6.09916L11.1004 11.7599Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M9.25977 6.63636L12.1863 10.7765L12.16 10.7998L12.1571 10.7969L9.25977 6.63636Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                </svg>
+
+            </div>
+        </section>
+
+        <!-- SECTION SCEA & GALERIE -->
+        <section class="section section-scea-and-gallery">
+            <div class="content-section">
+
+                {{#HasSCEA}}
+                <div class="section-scea">
+                    <h2>{{ResourcesTemplate.ServicesTitle}}</h2>
+
+                    <div class="options-scea-contain">
+                        {{#SCEA}}
+                        <div class="options-scea">{{LibelleService}}</div>
+                        {{/SCEA}}
+
+                        <div id="seeMore1" class="more-less-btn-contain">
+                            <a href="#" class="more-less-btn">+ {{ResourcesTemplate.ToSeeMore}}</a>
+                        </div>
+                        <div id="seeLess1" class="more-less-btn-contain">
+                            <a href="#" class="more-less-btn">- {{ResourcesTemplate.ToSeeLess}}</a>
+                        </div>
+                    </div>
+                </div>
+                {{/HasSCEA}}
+
+                <div class="owl-carousel owl-theme slider-gallery">
+                    {{#Photos}}
+                    <img src="{{UrlMedias}}/crop-1600x1200/{{IdMedia}}/{{FileNamePhoto}}" alt="{{NamePhoto}}-galerie" />
+                    {{/Photos}}
+                </div>
+
+            </div>
+        </section>
+
+        {{#Prestations.0.HasSpecialOffersPresta}}
+        <!-- SECTION OFFRES SPECIALES -->
+        <section class="section section-special-offers">
+            <div class="content-section">
+
+                <div class="section-title">
+                    <h2>{{ResourcesTemplate.OurSpecialOffers}}</h2>
+                </div>
+
+                <div class="owl-carousel owl-theme slider-special-offers">
+                    {{#Prestations.0.SpecialOffersPresta}}
+                    <div class="special-offers-contain">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21" height="22" viewBox="0 0 21 22" fill="none">
+                            <path d="M10.5 0.822266L11.0172 8.52893C11.0414 8.88895 11.4923 9.03546 11.7234 8.7584L16.6717 2.82759L12.5603 9.36642C12.3682 9.67188 12.6469 10.0555 12.9968 9.96718L20.4861 8.07759L13.3164 10.951C12.9815 11.0852 12.9815 11.5593 13.3164 11.6936L20.4861 14.5669L12.9968 12.6773C12.6469 12.5891 12.3682 12.9727 12.5603 13.2781L16.6717 19.8169L11.7234 13.8861C11.4923 13.6091 11.0414 13.7556 11.0172 14.1156L10.5 21.8223L9.98279 14.1156C9.95863 13.7556 9.50771 13.6091 9.27655 13.8861L4.32825 19.8169L8.43969 13.2781C8.63175 12.9727 8.35307 12.5891 8.00321 12.6773L0.513906 14.5669L7.68356 11.6936C8.01849 11.5593 8.01849 11.0852 7.68356 10.951L0.513906 8.07759L8.00321 9.96718C8.35307 10.0555 8.63175 9.67188 8.43969 9.36642L4.32825 2.82759L9.27655 8.7584C9.50771 9.03546 9.95863 8.88895 9.98279 8.52893L10.5 0.822266Z" fill="var(--color-bg-3)" />
+                        </svg>
+
+                        <div class="special-offers-date">
+                            {{^IsEarlyBirdOrLastMinute}}
+                            {{#DateFromSpecialOfferString}}
+                            <div class="duration-special-offer">
+                                <span class="price-from">{{ResourcesTemplate.DateFrom}}</span>
+                                <span class="price-from">{{DateFromSpecialOfferString}}</span>
+                                <span class="price-from">{{ResourcesTemplate.DateTo}} </span>
+                            </div>
+                            {{/DateFromSpecialOfferString}}
+
+                            <div class="duration-special-offer">
+                                {{^DateFromSpecialOfferString}}
+                                {{#DateToSpecialOfferString}}
+                                <span class="price-from">{{ResourcesTemplate.DateUntil}}</span>
+                                {{/DateToSpecialOfferString}}
+                                {{/DateFromSpecialOfferString}}
+
+                                {{#DateToSpecialOfferString}}
+                                <span class="price-from">{{DateToSpecialOfferString}}</span>
+                                {{/DateToSpecialOfferString}}
+                            </div>
+
+                            <div class="duration-special-offer">{{DeadlineStringSpecialOffer}}</div>
+                            {{/IsEarlyBirdOrLastMinute}}
+                            {{#LastMinute}}
+                            <div class="duration-special-offer">
+                                <span class="price-from">{{ResourcesTemplate.RightNow}}</span>
+                            </div>
+                            {{/LastMinute}}
+                            {{#EarlyBird}}
+                            <div class="duration-special-offer">
+                                <span class="price-from">{{ResourcesTemplate.BookEarly}}</span>
+                            </div>
+                            {{/EarlyBird}}
+                            {{#MinStayStringSpecialOffer}}
+                            <div class="duration-special-offer">{{MinStayStringSpecialOffer}}</div>
+                            {{/MinStayStringSpecialOffer}}
+
+                            <div class="duration-special-offer-2">{{TitleSpecialOffer}}</div>
+                        </div>
+
+                        {{#AmountPromo}}
+                        <div class="offer-promo">{{SignPromo}}{{AmountPromo}}{{UnitPromo}}</div>
+                        {{/AmountPromo}}
+                    </div>
+                    {{/Prestations.0.SpecialOffersPresta}}
+                </div>
+
+            </div>
+        </section>
+        {{/Prestations.0.HasSpecialOffersPresta}}
+
+        <!-- SECTION VIDEO -->
+        {{#HasHomeVideoActivated}}
+        <section class="section-video bg-img" style="background-image: url({{Url}}/img/bg-video.jpg);" alt="{{NamePhoto}}-bg-video">
+            <div class="opacity-3">
+                <div class="section">
+                    <div class="content-section">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="57" height="30" viewBox="0 0 57 30" fill="none">
+                            <g filter="url(#filter0_i_768_5518)">
+                                <path d="M16.3721 29.1026L1 27.7852L16.3804 29.0302L16.3721 29.1026Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                                <path d="M17.0056 26.3886L7.86035 22.9766L17.0223 26.3357" fill="white" />
+                                <path d="M17.0056 26.3886L7.86035 22.9766L17.0223 26.3357" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                                <path d="M33.0977 20.0708L37.5756 11.4473L33.145 20.0958" fill="white" />
+                                <path d="M33.0977 20.0708L37.5756 11.4473L33.145 20.0958" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                                <path d="M30.4658 19.1278L32.7493 9.66309L30.5299 19.1417" fill="white" />
+                                <path d="M30.4658 19.1278L32.7493 9.66309L30.5299 19.1417" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                                <path d="M27.7092 18.8297L27.6758 0.822266L27.7732 18.8297" fill="white" />
+                                <path d="M27.7092 18.8297L27.6758 0.822266L27.7732 18.8297" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                                <path d="M24.9487 19.1918L22.5732 9.73828L25.0016 19.1779" fill="white" />
+                                <path d="M24.9487 19.1918L22.5732 9.73828L25.0016 19.1779" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                                <path d="M17.7842 11.5996L22.4125 20.1785" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                                <path d="M20.0878 21.815L9.38867 10.3281L20.138 21.7676" fill="white" />
+                                <path d="M20.0878 21.815L9.38867 10.3281L20.138 21.7676" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                                <path d="M18.2687 23.9126L10.2207 18.4004L18.3022 23.8625" fill="white" />
+                                <path d="M18.2687 23.9126L10.2207 18.4004L18.3022 23.8625" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                                <path d="M38.6697 26.1885C38.6642 26.1718 38.6586 26.1523 38.6475 26.1356L47.6618 22.665L38.6697 26.1885Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                                <path d="M39.3573 28.8539L55.9992 27.8066L39.3628 28.9096C39.3628 28.8929 39.3573 28.8734 39.3545 28.8539L39.3573 28.8539Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                                <path d="M35.4671 21.6591L35.4615 21.6674L35.4365 21.6396L35.417 21.6173L46.2693 10.1221L35.4671 21.6591Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                                <path d="M45.2438 18.1484L37.3434 23.7331L37.2988 23.683L37.3044 23.6774L45.2438 18.1484Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                            </g>
+                            <defs>
+                                <filter id="filter0_i_768_5518" x="0.957031" y="0.819336" width="55.0752" height="32.8232" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dy="4" />
+                                    <feGaussianBlur stdDeviation="2" />
+                                    <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                    <feBlend mode="normal" in2="shape" result="effect1_innerShadow_768_5518" />
+                                </filter>
+                            </defs>
+                        </svg>
+
+                        <div class="section-video-home">
+                            <div class="rounded-box" id="player"></div>
+                            <input type="hidden" value="{{HomeVideoId}}" id="YoutubeVideoId" />
+                        </div>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="57" height="30" viewBox="0 0 57 30" fill="none">
+                            <g filter="url(#filter0_i_768_5539)">
+                                <path d="M40.6279 1.20498L56 2.52246L40.6196 1.2774L40.6279 1.20498Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                                <path d="M39.9944 3.91898L49.1396 7.33105L39.9777 3.9719" fill="white" />
+                                <path d="M39.9944 3.91898L49.1396 7.33105L39.9777 3.9719" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                                <path d="M23.9023 10.2369L19.4244 18.8604L23.855 10.2118" fill="white" />
+                                <path d="M23.9023 10.2369L19.4244 18.8604L23.855 10.2118" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                                <path d="M26.5342 11.1799L24.2507 20.6445L26.4701 11.1659" fill="white" />
+                                <path d="M26.5342 11.1799L24.2507 20.6445L26.4701 11.1659" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                                <path d="M29.2908 11.478L29.3242 29.4854L29.2268 11.478" fill="white" />
+                                <path d="M29.2908 11.478L29.3242 29.4854L29.2268 11.478" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                                <path d="M32.0513 11.1158L34.4268 20.5693L31.9984 11.1297" fill="white" />
+                                <path d="M32.0513 11.1158L34.4268 20.5693L31.9984 11.1297" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                                <path d="M39.2158 18.708L34.5875 10.1291" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                                <path d="M36.9122 8.49264L47.6113 19.9795L36.862 8.53999" fill="white" />
+                                <path d="M36.9122 8.49264L47.6113 19.9795L36.862 8.53999" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                                <path d="M38.7313 6.39499L46.7793 11.9072L38.6978 6.44512" fill="white" />
+                                <path d="M38.7313 6.39499L46.7793 11.9072L38.6978 6.44512" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                                <path d="M18.3303 4.11909C18.3358 4.1358 18.3414 4.1553 18.3525 4.17201L9.33817 7.64258L18.3303 4.11909Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                                <path d="M17.6427 1.45368L1.00081 2.50097L17.6372 1.39797C17.6372 1.41468 17.6427 1.43418 17.6455 1.45368L17.6427 1.45368Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                                <path d="M21.5329 8.64856L21.5385 8.64021L21.5635 8.66806L21.583 8.69034L10.7307 20.1855L21.5329 8.64856Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                                <path d="M11.7562 12.1592L19.6566 6.57452L19.7012 6.62466L19.6956 6.63023L11.7562 12.1592Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                            </g>
+                            <defs>
+                                <filter id="filter0_i_768_5539" x="0.967773" y="0.665039" width="55.0752" height="32.8232" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                    <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dy="4" />
+                                    <feGaussianBlur stdDeviation="2" />
+                                    <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                                    <feBlend mode="normal" in2="shape" result="effect1_innerShadow_768_5539" />
+                                </filter>
+                            </defs>
+                        </svg>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        {{/HasHomeVideoActivated}}
+
+        <!-- SECTION CARTES CADEAUX -->
+        {{#HasBookingActivated}}
+        {{#HasGiftCardsActivated}}
+        <section class="section section-giftcards">
+            <div class="content-section">
+
+                <div class="section-title">
+                    <h2>{{ResourcesTemplate.OurGiftCards2}}</h2>
+                </div>
+
+                <div class="owl-carousel owl-theme slider-giftcards">
+                    {{#GiftCards}}
+                    <div class="giftcards-contain">
+                        <div class="date-from-to">
+                            {{#DurationGiftCard}}
+                            <div class="group-date-os">
+                                <span class="date-os">{{ResourcesTemplate.Valid}}</span>
+                                <span class="date-os">{{DurationGiftCard}} {{ResourcesTemplate.month}}</span>
+                            </div>
+                            {{/DurationGiftCard}}
+
+                            {{^DurationGiftCard}}
+
+                            {{#DateFromGiftCardString}}
+                            <div class="group-date-os">
+                                <span class="date-os">{{ResourcesTemplate.Valid}}</span>
+                                <span class="date-os lowercase">{{ResourcesTemplate.DateFrom}}</span>
+                                <span class="date-os">{{DateFromGiftCardString}}</span>
+                                <span class="date-os">{{ResourcesTemplate.DateTo}}</span>
+                                <span class="date-os">{{DateToGiftCardString}}</span>
+                            </div>
+                            {{/DateFromGiftCardString}}
+
+                            {{^DateFromGiftCardString}}
+                            <div class="group-date-os">
+                                {{#DateToGiftCardString}}
+                                <span class="date-os">{{ResourcesTemplate.Valid}}</span>
+                                <span class="date-os lowercase">{{ResourcesTemplate.DateUntil}}</span>
+                                {{/DateToGiftCardString}}
+
+                                {{#DateToGiftCardString}}
+                                <span class="date-os">{{DateToGiftCardString}}</span>
+                                {{/DateToGiftCardString}}
+                            </div>
+                            {{/DateFromGiftCardString}}
+
+                            {{/DurationGiftCard}}
+                        </div>
+
+                        <a href="{{{UrlBECustom}}}/Search/Index/{{IdPubBe}}?idoi={{IdOi}}&searchFirstAvailableDates=1&culture={{CurrentLang.CultureLang}}&forcedTemplate={{UrlTemplateBE}}" class="infos-giftcards">
+                            <h3>{{ResourcesTemplate.GiftCardSolo}}</h3>
+
+                            <span class="price-gift">{{AmountGiftCard}}{{CurrencySymbol}}</span>
+                        </a>
+                    </div>
+                    {{/GiftCards}}
+                </div>
+
+            </div>
+        </section>
+        {{/HasGiftCardsActivated}}
+        {{/HasBookingActivated}}
+
+        <!-- SECTION CHEQUES CADEAUX -->
+        {{#HasBookingActivated}}
+        {{#HasGiftVouchersActivated}}
+        <section class="section section-giftcards section-vouchers">
+            <div class="content-section">
+
+                <div class="section-title">
+                    <h2>{{ResourcesTemplate.OurGiftVouchers}}</h2>
+                </div>
+
+                <div class="all-prices-vouchers">
+                    {{#GiftVouchers}}
+                    <a id="#voucher-{{Id}}" href="#voucher-{{Id}}" class="voucher-link">{{AmountGiftVoucher}} {{CurrencySymbol}}</a>
+                    {{/GiftVouchers}}
+                </div>
+
+                <div class="owl-carousel owl-theme vouchers-slider">
+                    {{#GiftVouchers}}
+                    <div id="voucher-{{Id}}" class="giftcards-contain giftcard-index">
+                        <div class="date-from-to">
+                            {{#DurationGiftVoucher}}
+                            <div class="group-date-os">
+                                <span class="date-os">{{ResourcesTemplate.Valid}}</span>
+                                <span class="date-os">{{DurationGiftVoucher}} {{ResourcesTemplate.month}}</span>
+                            </div>
+                            {{/DurationGiftVoucher}}
+
+                            {{^DurationGiftVoucher}}
+
+                            {{#DateFromGiftVoucherString}}
+                            <div class="group-date-os">
+                                <span class="date-os">{{ResourcesTemplate.Valid}}</span>
+                                <span class="date-os lowercase">{{ResourcesTemplate.DateFrom}}</span>
+                                <span class="date-os">{{DateFromGiftVoucherString}}</span>
+                                <span class="date-os">{{ResourcesTemplate.DateTo}}</span>
+                                <span class="date-os">{{DateToGiftVoucherString}}</span>
+                            </div>
+                            {{/DateFromGiftVoucherString}}
+
+                            {{^DateFromGiftVoucherString}}
+                            <div class="group-date-os">
+                                {{#DateToGiftVoucherString}}
+                                <span class="date-os">{{ResourcesTemplate.Valid}}</span>
+                                <span class="date-os lowercase">{{ResourcesTemplate.DateUntil}}</span>
+                                {{/DateToGiftVoucherString}}
+
+                                {{#DateToGiftVoucherString}}
+                                <span class="date-os">{{DateToGiftVoucherString}}</span>
+                                {{/DateToGiftVoucherString}}
+                            </div>
+                            {{/DateFromGiftVoucherString}}
+
+                            {{/DurationGiftVoucher}}
+                        </div>
+
+                        <a href="{{{UrlBECustom}}}/Search/Index/{{IdPubBe}}?idoi={{IdOi}}&searchFirstAvailableDates=1&culture={{CurrentLang.CultureLang}}&forcedTemplate={{UrlTemplateBE}}" class="infos-giftcards">
+                            <h3>{{ResourcesTemplate.GiftVoucher}}</h3>
+
+                            <span class="price-gift">{{AmountGiftVoucher}}{{CurrencySymbol}}</span>
+                        </a>
+                    </div>
+                    {{/GiftVouchers}}
+                </div>
+
+            </div>
+        </section>
+        {{/HasGiftVouchersActivated}}
+        {{/HasBookingActivated}}
+
+        {{#HasInstagramActivated}}
+        <!-- SECTION INSTA -->
+        <section class="section section-insta">
+            <div class="content-section">
+
+                <div class="section-title">
+                    <h2>{{ResourcesTemplate.OurLatestInstagramPosts}}</h2>
+                </div>
+
+                <div class="topiecha-grid">
+                    {{#InstagramMediasList}}
+                    <a href="{{Permalink}}" target="_blank" class="IG-bloc bg-img" style="background-image: url({{ThumbnailUrl}})"></a>
+                    {{/InstagramMediasList}}
+                </div>
+
+                {{#Instagram}}
+                <div class="btn-contain btn-contain-insta">
+                    <a class="btn" href="{{Instagram}}">
+                        {{ResourcesTemplate.InstaFollowUs}}
+                    </a>
+                </div>
+                {{/Instagram}}
+
+            </div>
+        </section>
+        {{/HasInstagramActivated}}
+
+        <!-- SECTION MAP -->
+        <section class="section section-map-and-address">
+            <div class="content-section">
+
+                <div class="titre-and-address-map">
+                    <div class="title-map-width-svg">
+                        <h2>{{ResourcesTemplate.WhereAreWe}}</h2>
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="none">
+                            <path d="M17.5 0.304688L18.4062 13.4217C18.4309 13.7786 18.8757 13.9261 19.1087 13.6548L27.7862 3.5514L20.5958 14.6604C20.399 14.9644 20.6751 15.3525 21.0268 15.2663L34.1435 12.0514L21.6074 16.9319C21.2676 17.0642 21.2676 17.5451 21.6074 17.6774L34.1435 22.558L21.0268 19.3431C20.6751 19.2569 20.399 19.645 20.5958 19.949L27.7862 31.058L19.1087 20.9546C18.8757 20.6833 18.4309 20.8308 18.4062 21.1876L17.5 34.3047L16.5938 21.1876C16.5691 20.8308 16.1243 20.6833 15.8913 20.9546L7.21376 31.058L14.4042 19.949C14.601 19.645 14.3249 19.2569 13.9732 19.3431L0.85651 22.558L13.3926 17.6774C13.7324 17.5451 13.7324 17.0642 13.3926 16.9319L0.85651 12.0514L13.9732 15.2663C14.3249 15.3525 14.601 14.9644 14.4042 14.6604L7.21376 3.5514L15.8913 13.6548C16.1243 13.9261 16.5691 13.7786 16.5938 13.4217L17.5 0.304688Z" fill="#EECC83" />
+                        </svg>
+                    </div>
+
+                    <div>
+                        {{CustomTitle}}, {{CustomTypeOi}} <br>
+                        {{AddressLine}}, <br>
+                        {{PostalCode}}, {{City}}, {{Country}}
+                    </div>
+                </div>
+
+                <div class="section-map">
+                    <div id="applemapkit" class="fullwidth-mapkit">
+                        <div id="mapApple"></div>
+                    </div>
+                    <div data-action="external-map" class="external-map">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="38" viewBox="0 0 39 38" fill="none">
+                            <g filter="url(#filter0_d_829_3070)">
+                                <path d="M22.875 14.0052C22.875 16.0618 20.2099 19.7266 19.0396 21.237C18.7589 21.5986 18.2375 21.5986 17.9604 21.237C16.7901 19.7266 14.125 16.0618 14.125 14.0052C14.125 11.508 16.0828 9.48535 18.5 9.48535C20.9172 9.48535 22.875 11.508 22.875 14.0052ZM23.1667 17.0335C23.2943 16.7737 23.4109 16.5138 23.5167 16.2576C23.5349 16.2124 23.5531 16.1635 23.5714 16.1183L27.8005 14.3706C28.3766 14.1333 29 14.5702 29 15.2105V25.4104C29 25.7795 28.7812 26.111 28.4495 26.2503L23.1667 28.4312V17.0335ZM13.0167 14.6945C13.1042 15.2256 13.2792 15.7605 13.4833 16.2576C13.5891 16.5138 13.7057 16.7737 13.8333 17.0335V26.5027L9.19948 28.4199C8.62344 28.6572 8 28.2202 8 27.5799V17.3801C8 17.011 8.21875 16.6795 8.55052 16.5401L13.0203 14.6945H13.0167ZM19.951 21.9903C20.4578 21.335 21.2526 20.269 22 19.0901V28.4801L15 26.4123V19.0901C15.7474 20.269 16.5422 21.335 17.049 21.9903C17.7964 22.9546 19.2036 22.9546 19.951 21.9903ZM18.5 15.2105C18.8868 15.2105 19.2577 15.0518 19.5312 14.7693C19.8047 14.4867 19.9583 14.1035 19.9583 13.7039C19.9583 13.3043 19.8047 12.9211 19.5312 12.6386C19.2577 12.356 18.8868 12.1973 18.5 12.1973C18.1132 12.1973 17.7423 12.356 17.4688 12.6386C17.1953 12.9211 17.0417 13.3043 17.0417 13.7039C17.0417 14.1035 17.1953 14.4867 17.4688 14.7693C17.7423 15.0518 18.1132 15.2105 18.5 15.2105Z" fill="#41654C" />
+                                <path d="M18.3573 20.9329L18.3557 20.9308C17.7758 20.1825 16.8309 18.9068 16.0332 17.5698C15.6343 16.9011 15.2779 16.2265 15.0226 15.6013C14.764 14.9683 14.625 14.4241 14.625 14.0052C14.625 11.7687 16.3742 9.98535 18.5 9.98535C20.6258 9.98535 22.375 11.7687 22.375 14.0052C22.375 14.4241 22.236 14.9683 21.9774 15.6013C21.722 16.2265 21.3657 16.9011 20.9668 17.5698C20.1691 18.9068 19.2242 20.1825 18.6443 20.9308L19.0396 21.237L18.6446 20.9304C18.5997 20.9883 18.5454 21.0082 18.4986 21.0082C18.452 21.0082 18.4 20.9886 18.3573 20.9329ZM28.2558 25.7894L23.6667 27.6838V17.1485C23.7711 16.9311 23.868 16.7142 23.9576 16.4997L27.991 14.8329C27.991 14.8329 27.9911 14.8328 27.9912 14.8328C28.215 14.7408 28.5 14.9009 28.5 15.2105V25.4104C28.5 25.5821 28.3985 25.7288 28.257 25.7889C28.2566 25.789 28.2562 25.7892 28.2558 25.7894ZM8.74307 17.0016L12.6565 15.3857C12.7554 15.754 12.8831 16.1122 13.0208 16.4476L13.0212 16.4484C13.1166 16.6796 13.2206 16.9138 13.3333 17.1485V26.1685L9.00904 27.9576C9.00884 27.9576 9.00865 27.9577 9.00846 27.9578C8.78471 28.0495 8.5 27.8894 8.5 27.5799V17.3801C8.5 17.2083 8.60151 17.0616 8.74307 17.0016ZM20.3462 22.2967L20.3466 22.2962C20.651 21.9026 21.0593 21.3609 21.5 20.7346V27.8111L15.5 26.0386V20.7346C15.9407 21.3609 16.349 21.9026 16.6534 22.2962L16.6538 22.2967C17.6013 23.5192 19.3987 23.5192 20.3462 22.2967ZM18.5 15.7105C19.0247 15.7105 19.5246 15.495 19.8905 15.117C20.2558 14.7395 20.4583 14.2309 20.4583 13.7039C20.4583 13.1769 20.2558 12.6683 19.8905 12.2908C19.5246 11.9128 19.0247 11.6973 18.5 11.6973C17.9753 11.6973 17.4754 11.9128 17.1095 12.2908C16.7442 12.6683 16.5417 13.1769 16.5417 13.7039C16.5417 14.2309 16.7442 14.7395 17.1095 15.117C17.4754 15.495 17.9753 15.7105 18.5 15.7105Z" stroke="#41654C" />
+                            </g>
+                            <defs>
+                                <filter id="filter0_d_829_3070" x="0.4" y="0.885351" width="38.2" height="36.2" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dx="1" />
+                                    <feGaussianBlur stdDeviation="4.3" />
+                                    <feComposite in2="hardAlpha" operator="out" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0" />
+                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_829_3070" />
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_829_3070" result="shape" />
+                                </filter>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION DECO -->
+        <section class="section-deco">
+            <div class="content-section">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="30" viewBox="0 0 16 30" fill="none">
+                    <path d="M1.00003 9.05545L1.69043 1L1.03798 9.05983L1.00003 9.05545Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M2.42095 9.38909L4.20898 4.59668L2.44868 9.39785" fill="white" />
+                    <path d="M2.42095 9.38909L4.20898 4.59668L2.44868 9.39785" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M5.73199 17.8193L10.251 20.1659L5.71885 17.8441" fill="white" />
+                    <path d="M5.73199 17.8193L10.251 20.1659L5.71885 17.8441" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M6.22673 16.4404L11.1865 17.6371L6.21943 16.474" fill="white" />
+                    <path d="M6.22673 16.4404L11.1865 17.6371L6.21943 16.474" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M6.38288 14.996L15.8193 14.9785L6.38288 15.0296" fill="white" />
+                    <path d="M6.38288 14.996L15.8193 14.9785L6.38288 15.0296" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M6.19253 13.5505L11.1465 12.3057L6.19983 13.5782" fill="white" />
+                    <path d="M6.19253 13.5505L11.1465 12.3057L6.19983 13.5782" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M10.1719 9.7959L5.67624 12.2213" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M4.81841 11.0022L10.8379 5.39551L4.84322 11.0285" fill="white" />
+                    <path d="M4.81841 11.0022L10.8379 5.39551L4.84322 11.0285" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M3.71883 10.0495L6.60742 5.83203L3.7451 10.067" fill="white" />
+                    <path d="M3.71883 10.0495L6.60742 5.83203L3.7451 10.067" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M2.52663 20.7402C2.53538 20.7373 2.5456 20.7344 2.55436 20.7285L4.37305 25.4523L2.52663 20.7402Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M1.12989 21.1011L1.67871 29.822L1.1007 21.104C1.10946 21.104 1.11968 21.1011 1.12989 21.0996L1.12989 21.1011Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M4.89956 19.0614L4.89518 19.0585L4.90978 19.0454L4.92145 19.0352L10.9453 24.7221L4.89956 19.0614Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M6.64062 24.1576L3.71408 20.0175L3.74036 19.9941L3.74328 19.9971L6.64062 24.1576Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                </svg>
+
+                <div class="hr-name"></div>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="30" viewBox="0 0 16 30" fill="none">
+                    <path d="M15 21.7658L14.3096 29.8213L14.962 21.7615L15 21.7658Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M13.5791 21.4322L11.791 26.2246L13.5513 21.4234" fill="white" />
+                    <path d="M13.5791 21.4322L11.791 26.2246L13.5513 21.4234" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M10.268 13.002L5.74902 10.6554L10.2811 12.9771" fill="white" />
+                    <path d="M10.268 13.002L5.74902 10.6554L10.2811 12.9771" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M9.77327 14.3809L4.81348 13.1842L9.78057 14.3473" fill="white" />
+                    <path d="M9.77327 14.3809L4.81348 13.1842L9.78057 14.3473" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M9.61712 15.8253L0.180664 15.8428L9.61712 15.7917" fill="white" />
+                    <path d="M9.61712 15.8253L0.180664 15.8428L9.61712 15.7917" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M9.80747 17.2708L4.85352 18.5156L9.80017 17.2431" fill="white" />
+                    <path d="M9.80747 17.2708L4.85352 18.5156L9.80017 17.2431" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M5.82812 21.0254L10.3238 18.6" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M11.1816 19.8191L5.16211 25.4258L11.1568 19.7928" fill="white" />
+                    <path d="M11.1816 19.8191L5.16211 25.4258L11.1568 19.7928" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M12.2812 20.7718L9.39258 24.9893L12.2549 20.7543" fill="white" />
+                    <path d="M12.2812 20.7718L9.39258 24.9893L12.2549 20.7543" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M13.4734 10.0811C13.4646 10.084 13.4544 10.0869 13.4456 10.0928L11.627 5.36895L13.4734 10.0811Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M14.8701 9.72022L14.3213 0.999321L14.8993 9.7173C14.8905 9.7173 14.8803 9.72022 14.8701 9.72168L14.8701 9.72022Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M11.1004 11.7599L11.1048 11.7628L11.0902 11.7759L11.0785 11.7861L5.05469 6.09916L11.1004 11.7599Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    <path d="M9.25977 6.63636L12.1863 10.7765L12.16 10.7998L12.1571 10.7969L9.25977 6.63636Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                </svg>
+
+            </div>
+        </section>
+
+        <!-- SECTION CALENDRIER -->
+        {{#HasCalendarActivated}}
+        <section class="section section-calendar">
+            <div class="content-section">
+
+                <div class="section-title">
+                    <h2>{{ResourcesTemplate.AvailabilityTitle}}</h2>
+                </div>
+
+                <div class="calendars">
+                    <div class="avail-calendar-w">
+                        <div class="calendar-container">
+                            <div id="datepicker2"></div>
+                        </div>
+                    </div>
+                    <div class="calendar_status">
+                        <div>
+                            <div class="green-dispo">-</div>
+                            <span>{{ResourcesTemplate.Available}}</span>
+                        </div>
+                        <div>
+                            <div class="red-no-dispo">-</div>
+                            <span class="not-available">{{ResourcesTemplate.NotAvailable}}</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        {{/HasCalendarActivated}}
+
+        <!-- SECTION CONTACT -->
+        <section class="section section-contact">
+            <div class="content-section">
+
+                <div class="title-contacts-social-medias">
+                    <div class="section-title">
+                        <h2>{{ResourcesTemplate.OurLocation}}</h2>
+                    </div>
+
+                    <div class="contacts-details-contain">
+                        <div class="contacts-details">
+                            <i class="las la-map-marker icone-contact"></i>
+
+                            <div class="name-and-info-contact">
+                                <h4>{{ResourcesTemplate.Address}}</h4>
+
+                                <div>
+                                    {{AddressLine}},<br>
+                                    {{PostalCode}}, {{City}}, {{Country}}
+                                </div>
+                            </div>
+                        </div>
+
+                        {{#HasPhoneNumberActivated}}
+                        <div class="contacts-details">
+                            <i class="las la-phone icone-contact"></i>
+
+                            <div class="name-and-info-contact">
+                                <h4>{{ResourcesTemplate.Phone}}</h4>
+
+                                <a href="tel:{{PhoneNumber}}">
+                                    <span>{{PhoneNumber}}</span>
+                                </a>
+                            </div>
+                        </div>
+                        {{/HasPhoneNumberActivated}}
+
+                        {{#HasMobilePhoneNumberActivated}}
+                        <div class="contacts-details">
+                            <i class="las la-mobile icone-contact"></i>
+
+                            <div class="name-and-info-contact">
+                                <h4>{{ResourcesTemplate.MobilePhone}}</h4>
+
+                                <a href="tel:{{MobilePhoneNumber}}">
+                                    <span>{{MobilePhoneNumber}}</span>
+                                </a>
+                            </div>
+                        </div>
+                        {{/HasMobilePhoneNumberActivated}}
+
+                        {{#FaxNumber}}
+                        <div class="contacts-details">
+                            <i class="las la-fax icone-contact"></i>
+
+                            <div class="name-and-info-contact">
+                                <h4>{{ResourcesTemplate.AbrFax}}</h4>
+
+                                <div>{{FaxNumber}}</div>
+                            </div>
+                        </div>
+                        {{/FaxNumber}}
+
+                        {{#HasWhatsappWidgetActivated}}
+                        <div class="contacts-details">
+                            <i class="lab la-whatsapp icone-contact"></i>
+
+                            <div class="name-and-info-contact">
+                                <h4>{{ResourcesTemplate.Phone}}</h4>
+
+                                <a href="{{WhatsappUrl}}">
+                                    <span>WhatsApp</span>
+                                </a>
+                            </div>
+                        </div>
+                        {{/HasWhatsappWidgetActivated}}
+
+                        <div class="contacts-details">
+                            <i class="la la-at icone-contact"></i>
+
+                            <div class="name-and-info-contact">
+                                <h4>{{ResourcesTemplate.MailInfoLabelEmail}}</h4>
+
+                                <div>
+                                    <a class="dynamic-mail-to">{{ResourcesTemplate.contactByEmail}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{#HasSocialNetworks}}
+                    <div class="social-medias">
+                        {{#TikTok}}<a href="{{TikTok}}" target="_blank"><i class="fab fa-tiktok"></i></a>{{/TikTok}}
+                        {{#Facebook}}<a href="{{Facebook}}" target="_blank"><i class="lab la-facebook-f"></i></a>{{/Facebook}}
+                        {{#Twitter}}<a href="{{Twitter}}" target="_blank"><i class="lab la-twitter"></i></a>{{/Twitter}}
+                        {{#Pinterest}}<a href="{{Pinterest}}" target="_blank"><i class="lab la-pinterest"></i></a>{{/Pinterest}}
+                        {{#Youtube}}<a href="{{Youtube}}" target="_blank"><i class="lab la-youtube"></i></a>{{/Youtube}}
+                        {{#Instagram}}<a href="{{Instagram}}" target="_blank"><i class="lab la-instagram"></i></a>{{/Instagram}}
+                        {{#Vimeo}}<a href="{{Vimeo}}" target="_blank"><i class="lab la-vimeo"></i></a>{{/Vimeo}}
+                        {{#Linkedin}}<a href="{{Linkedin}}" target="_blank"><i class="lab la-linkedin-in"></i></a>{{/Linkedin}}
+                    </div>
+                    {{/HasSocialNetworks}}
+                </div>
+
+                <div class="form-contact">
+                    <div class="section-title">
+                        <h2>{{ResourcesTemplate.Message}}</h2>
+                    </div>
+
+                    <form id="Contact-form" action="" method="GET">
+                        <div class="bloc-contact">
+
+                            <div class="form-line double-line">
+                                <div class="form-group margin-input">
+                                    <label for="Email-lastname" class="title-color-1 d-none control-label">{{ResourcesTemplate.LastName}} *</label>
+                                    <input id="Email-lastname" name="Email-lastname" type="text" placeholder="{{ResourcesTemplate.LastName}}" class="form-control" data-error="{{ResourcesTemplate.LastNameError}}" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Email-firstname" class="title-color-1 d-none">{{ResourcesTemplate.FirstName}} *</label>
+                                    <input id="Email-firstname" name="Email-firstname" type="text" placeholder="{{ResourcesTemplate.FirstName}}" class="form-control" data-error="{{ResourcesTemplate.FirstNameError}}" required>
+                                </div>
+                            </div>
+
+                            <div class="form-line double-line">
+                                <div class="form-group margin-input">
+                                    <label for="Email-email" class="title-color-1 d-none">{{ResourcesTemplate.Email}} *</label>
+                                    <input id="Email-email" name="Email-email" type="email" placeholder="{{ResourcesTemplate.Email}}" class="form-control" data-error="{{ResourcesTemplate.EmailError}}" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="Email-phone" class="title-color-1 d-none">{{ResourcesTemplate.Phone}} *</label>
+                                    <input id="Email-phone" name="Email-phone" type="tel" placeholder="{{ResourcesTemplate.Phone}}" class="form-control" data-error="{{ResourcesTemplate.PhoneError}}" oninput="formatPhoneNumber(this)" required>
+                                </div>
+                            </div>
+
+                            <div clss="form-line">
+                                <div class="form-group">
+                                    <textarea id="Email-message" name="Email-message" rows="10" class="form-control" placeholder="{{ResourcesTemplate.Message}}" data-error="{{ResourcesTemplate.MessageError}}" required></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        {{>Captcha}}
+                    </form>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    {{>Footer}}
+    {{>CommonScripts}}
+    {{! COOKIES }}
+    <button id="cookie" style="background-color:#000;color:#fff;"><i class="las la-cookie-bite"></i></button>
+    
+</body>
+
+</html>

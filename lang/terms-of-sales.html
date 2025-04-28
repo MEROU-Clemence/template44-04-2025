@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="{{CurrentLang.IsoLang}}" culture="{{CurrentLang.CultureLang}}">
+<head>
+    <title>{{ResourcesTemplate.CGV2}} - {{CustomTitle}} - {{City}} - {{Country}}</title>
+    <meta name="description" content="{{ResourcesTemplate.TosDescription}}">
+    {{>CommonMetaTags}}
+    <link rel="canonical" href="{{UrlTermsOfSales}}" />
+    <meta property="og:url" content="{{UrlTermsOfSales}}" />
+    <meta property="og:title" content="{{ResourcesTemplate.CGV2}}" />
+    <meta property="og:image" content="{{#Photos.0}}{{UrlMedias}}/crop-300x200/{{IdMedia}}/{{FileNamePhoto}}{{/Photos.0}}" />
+    <meta property="og:description" content="{{ResourcesTemplate.TosDescription}}" />
+    {{>FaviconTags}}
+    {{>CommonStylesheets}}
+</head>
+
+<body>
+    {{{ScriptAnalytics}}}
+    {{{GoogleTagManagerBody}}}
+
+    {{>Header}}
+
+    <main>
+        <!-- SECTION BANNER -->
+        <section class="section-title-BG bg-img" style="background-image: url({{#Photos.0}}{{UrlMedias}}/crop-2200x600/{{IdMedia}}/{{FileNamePhoto}}{{/Photos.0}})" alt="{{NamePhoto}}-bg-cgv">
+
+            <div class="big-title-contain">
+                <h1 class="big-title">{{ResourcesTemplate.CGV2}}</h1>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="23" viewBox="0 0 22 23" fill="none">
+                    <path d="M11 0.5L11.545 8.62107C11.5692 8.98109 12.0201 9.1276 12.2513 8.85054L17.4656 2.60081L13.1331 9.49125C12.9411 9.79671 13.2197 10.1803 13.5696 10.092L21.4616 8.10081L13.9064 11.1287C13.5715 11.2629 13.5715 11.7371 13.9064 11.8713L21.4616 14.8992L13.5696 12.908C13.2197 12.8197 12.9411 13.2033 13.1331 13.5087L17.4656 20.3992L12.2513 14.1495C12.0201 13.8724 11.5692 14.0189 11.545 14.3789L11 22.5L10.455 14.3789C10.4308 14.0189 9.9799 13.8724 9.74874 14.1495L4.53436 20.3992L8.86688 13.5087C9.05894 13.2033 8.78026 12.8197 8.4304 12.908L0.538379 14.8992L8.09356 11.8713C8.42849 11.7371 8.42849 11.2629 8.09356 11.1287L0.538379 8.10081L8.4304 10.092C8.78026 10.1803 9.05894 9.79671 8.86688 9.49125L4.53436 2.60081L9.74874 8.85054C9.9799 9.1276 10.4308 8.98109 10.455 8.62107L11 0.5Z" fill="#EECC83" />
+                </svg>
+            </div>
+
+        </section>
+
+        <!-- SECTION TERMS OF SALES -->
+        <section class="section">
+            <div class="content-section">
+                {{{CGV}}}
+            </div>
+        </section>
+    </main>
+
+    {{>Footer}}
+    {{>CommonScripts}}
+    
+</body>
+</html>

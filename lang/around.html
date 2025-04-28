@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="{{CurrentLang.IsoLang}}" culture="{{CurrentLang.CultureLang}}">
+<head>
+    <title>{{ResourcesTemplate.Around}} - {{CustomTitle}} - {{City}} - {{Country}}</title>
+    <meta name="description" content="{{SubtitleAround}}">
+    {{>CommonMetaTags}}
+    <link rel="canonical" href="{{UrlAround}}" />
+    <meta property="og:url" content="{{UrlAround}}" />
+    <meta property="og:title" content="{{ResourcesTemplate.Around}}" />
+    <meta property="og:image" content="{{#Photos.0}}{{UrlMedias}}/crop-300x200/{{IdMedia}}/{{FileNamePhoto}}{{/Photos.0}}" />
+    <meta property="og:description" content="{{SubtitleAround}}" />
+    {{>FaviconTags}}
+    {{>CommonStylesheets}}
+</head>
+<body>
+    {{{ScriptAnalytics}}}
+    {{{GoogleTagManagerBody}}}
+
+    {{>Header}}
+
+    <main>
+        <!-- SECTION BANNER -->
+        <section class="section-title-BG bg-img" style="background-image: url(https://static.elloha.com/webgen/img/around.jpg)" alt="{{NamePhoto}}-bg-around">
+
+            <div class="big-title-contain">
+                <h1 class="big-title">{{ResourcesTemplate.pageMenuTitle_around}}</h1>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="23" viewBox="0 0 22 23" fill="none">
+                    <path d="M11 0.5L11.545 8.62107C11.5692 8.98109 12.0201 9.1276 12.2513 8.85054L17.4656 2.60081L13.1331 9.49125C12.9411 9.79671 13.2197 10.1803 13.5696 10.092L21.4616 8.10081L13.9064 11.1287C13.5715 11.2629 13.5715 11.7371 13.9064 11.8713L21.4616 14.8992L13.5696 12.908C13.2197 12.8197 12.9411 13.2033 13.1331 13.5087L17.4656 20.3992L12.2513 14.1495C12.0201 13.8724 11.5692 14.0189 11.545 14.3789L11 22.5L10.455 14.3789C10.4308 14.0189 9.9799 13.8724 9.74874 14.1495L4.53436 20.3992L8.86688 13.5087C9.05894 13.2033 8.78026 12.8197 8.4304 12.908L0.538379 14.8992L8.09356 11.8713C8.42849 11.7371 8.42849 11.2629 8.09356 11.1287L0.538379 8.10081L8.4304 10.092C8.78026 10.1803 9.05894 9.79671 8.86688 9.49125L4.53436 2.60081L9.74874 8.85054C9.9799 9.1276 10.4308 8.98109 10.455 8.62107L11 0.5Z" fill="#EECC83" />
+                </svg>
+            </div>
+
+        </section>
+
+        <!-- SECTION AROUND -->
+        <section class="section">
+            <div class="content-section">
+
+                <div class="around-items-w around-big-contain">
+                    {{#OisAssocied}}
+                    <div class="grid-item around-contain" data-id-type="{{IdTypeOiAssocied}}" data-type-label="{{TypeOiAssocied}}" data-lat="{{XOiAssocied}}" data-lng="{{YOiAssocied}}">
+                        <div class="img-presta-contain">
+                            <div class="around-type-contain">
+                                <span class="around-item-type">{{TypeOiAssocied}}</span>
+                            </div>
+
+                            {{#PhotoOiAssocied}}
+                            <img class="bg-img" src="{{UrlMedias}}/crop-550x350/{{IdMedia}}/{{FileNamePhoto}}" alt="{{NamePhoto}}-img-around" />
+                            {{/PhotoOiAssocied}}
+
+                            {{#DistanceOiAssocied}}
+                            <div class="around-distance">
+                                <i class="las la-map-marker"></i>{{ResourcesTemplate.At}} {{DistanceOiAssocied}} {{ResourcesTemplate.Km}} {{ResourcesTemplate.FromOurPlace}}
+                            </div>
+                            {{/DistanceOiAssocied}}
+                        </div>
+
+                        <div class="infos-contain-and-btn-around">
+                            <div class="infos-contain">
+                                <h3 data-name>{{TitleOiAssocied}}</h3>
+
+                                <div class="descrip-around-contain">
+                                    <div class="description-around">{{DescriptionOiAssocied}}</div>
+
+                                    <div class="more-less-btn-contain seeMore4">
+                                        <a href="#" class="more-less-btn link-to-see see-all">{{ResourcesTemplate.ReadMore}}</a>
+                                    </div>
+                                    <div class="more-less-btn-contain seeLess4">
+                                        <a href="#" class="more-less-btn link-to-see see-menos">{{ResourcesTemplate.ReadLess2}}</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="btn-around {{^TextOpinion}}no-opinion{{/TextOpinion}}">
+                                <div class="comment-item-w">
+                                    <div class="icon-to-see icon-all btn">{{ResourcesTemplate.WhyWeRecommand}}</div>
+                                    <div class="icon-to-see icon-menos hidden btn">{{ResourcesTemplate.WhyWeRecommand}}</div>
+                                    <div class="text-opinion d-none">{{TextOpinion}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{/OisAssocied}}
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION MAP -->
+        <section class="section section-map-in-around">
+            <div class="content-section">
+
+                <svg class="svg-rotate" xmlns="http://www.w3.org/2000/svg" width="22" height="42" viewBox="0 0 22 42" fill="none">
+                    <g filter="url(#filter0_i_776_4514)">
+                        <path d="M20.5656 29.8206L19.6074 41L20.5129 29.8145L20.5656 29.8206Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                        <path d="M18.5947 29.3588L16.1133 36.0098L18.5562 29.3467" fill="white" />
+                        <path d="M18.5947 29.3588L16.1133 36.0098L18.5562 29.3467" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                        <path d="M13.999 17.6582L7.72754 14.4016L14.0172 17.6238" fill="white" />
+                        <path d="M13.999 17.6582L7.72754 14.4016L14.0172 17.6238" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                        <path d="M13.3119 19.5703L6.42871 17.9096L13.3221 19.5237" fill="white" />
+                        <path d="M13.3119 19.5703L6.42871 17.9096L13.3221 19.5237" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                        <path d="M13.096 21.5753L0 21.5996L13.096 21.5287" fill="white" />
+                        <path d="M13.096 21.5753L0 21.5996L13.096 21.5287" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                        <path d="M13.3595 23.583L6.48438 25.3105L13.3494 23.5445" fill="white" />
+                        <path d="M13.3595 23.583L6.48438 25.3105L13.3494 23.5445" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                        <path d="M7.83887 28.793L14.0779 25.427" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                        <path d="M15.2679 27.1194L6.91406 34.9004L15.2335 27.0829" fill="white" />
+                        <path d="M15.2679 27.1194L6.91406 34.9004L15.2335 27.0829" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                        <path d="M16.793 28.4419L12.7842 34.2949L16.7565 28.4176" fill="white" />
+                        <path d="M16.793 28.4419L12.7842 34.2949L16.7565 28.4176" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                        <path d="M18.4482 13.6029C18.4361 13.607 18.4219 13.611 18.4097 13.6191L15.8857 7.06339L18.4482 13.6029Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                        <path d="M20.3847 13.1015L19.623 0.998575L20.4252 13.0974C20.4131 13.0974 20.3989 13.1015 20.3847 13.1035L20.3847 13.1015Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                        <path d="M15.154 15.9323L15.1601 15.9363L15.1398 15.9546L15.1236 15.9688L6.76367 8.07634L15.154 15.9323Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                        <path d="M12.6006 8.82156L16.6621 14.5672L16.6256 14.5996L16.6215 14.5956L12.6006 8.82156Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    </g>
+                    <defs>
+                        <filter id="filter0_i_776_4514" x="-0.00292969" y="0.964844" width="21.1084" height="44.0781" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                            <feOffset dy="4" />
+                            <feGaussianBlur stdDeviation="2" />
+                            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                            <feBlend mode="normal" in2="shape" result="effect1_innerShadow_776_4514" />
+                        </filter>
+                    </defs>
+                </svg>
+
+                <div class="section-map">
+                    <div id="applemapkit" class="fullwidth-mapkit" data-lat="{{X}}" data-lng="{{Y}}" data-string="{{CustomTitle}}, {{AddressLine}}, {{PostalCode}}, {{City}}, {{Country}}.">
+                        <div id="mapApple"></div>
+                    </div>
+                    <div data-action="external-map" class="external-map">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="38" viewBox="0 0 39 38" fill="none">
+                            <g filter="url(#filter0_d_829_3070)">
+                                <path d="M22.875 14.0052C22.875 16.0618 20.2099 19.7266 19.0396 21.237C18.7589 21.5986 18.2375 21.5986 17.9604 21.237C16.7901 19.7266 14.125 16.0618 14.125 14.0052C14.125 11.508 16.0828 9.48535 18.5 9.48535C20.9172 9.48535 22.875 11.508 22.875 14.0052ZM23.1667 17.0335C23.2943 16.7737 23.4109 16.5138 23.5167 16.2576C23.5349 16.2124 23.5531 16.1635 23.5714 16.1183L27.8005 14.3706C28.3766 14.1333 29 14.5702 29 15.2105V25.4104C29 25.7795 28.7812 26.111 28.4495 26.2503L23.1667 28.4312V17.0335ZM13.0167 14.6945C13.1042 15.2256 13.2792 15.7605 13.4833 16.2576C13.5891 16.5138 13.7057 16.7737 13.8333 17.0335V26.5027L9.19948 28.4199C8.62344 28.6572 8 28.2202 8 27.5799V17.3801C8 17.011 8.21875 16.6795 8.55052 16.5401L13.0203 14.6945H13.0167ZM19.951 21.9903C20.4578 21.335 21.2526 20.269 22 19.0901V28.4801L15 26.4123V19.0901C15.7474 20.269 16.5422 21.335 17.049 21.9903C17.7964 22.9546 19.2036 22.9546 19.951 21.9903ZM18.5 15.2105C18.8868 15.2105 19.2577 15.0518 19.5312 14.7693C19.8047 14.4867 19.9583 14.1035 19.9583 13.7039C19.9583 13.3043 19.8047 12.9211 19.5312 12.6386C19.2577 12.356 18.8868 12.1973 18.5 12.1973C18.1132 12.1973 17.7423 12.356 17.4688 12.6386C17.1953 12.9211 17.0417 13.3043 17.0417 13.7039C17.0417 14.1035 17.1953 14.4867 17.4688 14.7693C17.7423 15.0518 18.1132 15.2105 18.5 15.2105Z" fill="#41654C" />
+                                <path d="M18.3573 20.9329L18.3557 20.9308C17.7758 20.1825 16.8309 18.9068 16.0332 17.5698C15.6343 16.9011 15.2779 16.2265 15.0226 15.6013C14.764 14.9683 14.625 14.4241 14.625 14.0052C14.625 11.7687 16.3742 9.98535 18.5 9.98535C20.6258 9.98535 22.375 11.7687 22.375 14.0052C22.375 14.4241 22.236 14.9683 21.9774 15.6013C21.722 16.2265 21.3657 16.9011 20.9668 17.5698C20.1691 18.9068 19.2242 20.1825 18.6443 20.9308L19.0396 21.237L18.6446 20.9304C18.5997 20.9883 18.5454 21.0082 18.4986 21.0082C18.452 21.0082 18.4 20.9886 18.3573 20.9329ZM28.2558 25.7894L23.6667 27.6838V17.1485C23.7711 16.9311 23.868 16.7142 23.9576 16.4997L27.991 14.8329C27.991 14.8329 27.9911 14.8328 27.9912 14.8328C28.215 14.7408 28.5 14.9009 28.5 15.2105V25.4104C28.5 25.5821 28.3985 25.7288 28.257 25.7889C28.2566 25.789 28.2562 25.7892 28.2558 25.7894ZM8.74307 17.0016L12.6565 15.3857C12.7554 15.754 12.8831 16.1122 13.0208 16.4476L13.0212 16.4484C13.1166 16.6796 13.2206 16.9138 13.3333 17.1485V26.1685L9.00904 27.9576C9.00884 27.9576 9.00865 27.9577 9.00846 27.9578C8.78471 28.0495 8.5 27.8894 8.5 27.5799V17.3801C8.5 17.2083 8.60151 17.0616 8.74307 17.0016ZM20.3462 22.2967L20.3466 22.2962C20.651 21.9026 21.0593 21.3609 21.5 20.7346V27.8111L15.5 26.0386V20.7346C15.9407 21.3609 16.349 21.9026 16.6534 22.2962L16.6538 22.2967C17.6013 23.5192 19.3987 23.5192 20.3462 22.2967ZM18.5 15.7105C19.0247 15.7105 19.5246 15.495 19.8905 15.117C20.2558 14.7395 20.4583 14.2309 20.4583 13.7039C20.4583 13.1769 20.2558 12.6683 19.8905 12.2908C19.5246 11.9128 19.0247 11.6973 18.5 11.6973C17.9753 11.6973 17.4754 11.9128 17.1095 12.2908C16.7442 12.6683 16.5417 13.1769 16.5417 13.7039C16.5417 14.2309 16.7442 14.7395 17.1095 15.117C17.4754 15.495 17.9753 15.7105 18.5 15.7105Z" stroke="#41654C" />
+                            </g>
+                            <defs>
+                                <filter id="filter0_d_829_3070" x="0.4" y="0.885351" width="38.2" height="36.2" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                    <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                                    <feOffset dx="1" />
+                                    <feGaussianBlur stdDeviation="4.3" />
+                                    <feComposite in2="hardAlpha" operator="out" />
+                                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0" />
+                                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_829_3070" />
+                                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_829_3070" result="shape" />
+                                </filter>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+
+                <svg class="svg-rotate" xmlns="http://www.w3.org/2000/svg" width="22" height="42" viewBox="0 0 22 42" fill="none">
+                    <g filter="url(#filter0_i_776_4538)">
+                        <path d="M1.43443 12.1794L2.39258 1L1.4871 12.1855L1.43443 12.1794Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                        <path d="M3.40527 12.6412L5.88672 5.99023L3.44376 12.6533" fill="white" />
+                        <path d="M3.40527 12.6412L5.88672 5.99023L3.44376 12.6533" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                        <path d="M8.00098 24.3418L14.2725 27.5984L7.98275 24.3762" fill="white" />
+                        <path d="M8.00098 24.3418L14.2725 27.5984L7.98275 24.3762" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                        <path d="M8.68806 22.4297L15.5713 24.0904L8.67793 22.4763" fill="white" />
+                        <path d="M8.68806 22.4297L15.5713 24.0904L8.67793 22.4763" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                        <path d="M8.90404 20.4247L22 20.4004L8.90404 20.4713" fill="white" />
+                        <path d="M8.90404 20.4247L22 20.4004L8.90404 20.4713" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                        <path d="M8.6405 18.417L15.5156 16.6895L8.65062 18.4555" fill="white" />
+                        <path d="M8.6405 18.417L15.5156 16.6895L8.65062 18.4555" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                        <path d="M14.1611 13.207L7.92206 16.573" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                        <path d="M6.73207 14.8806L15.0859 7.09961L6.7665 14.9171" fill="white" />
+                        <path d="M6.73207 14.8806L15.0859 7.09961L6.7665 14.9171" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                        <path d="M5.20702 13.5581L9.21582 7.70508L5.24348 13.5824" fill="white" />
+                        <path d="M5.20702 13.5581L9.21582 7.70508L5.24348 13.5824" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                        <path d="M3.55178 28.3971C3.56394 28.393 3.57812 28.389 3.59027 28.3809L6.11426 34.9366L3.55178 28.3971Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                        <path d="M1.6153 28.8985L2.37695 41.0014L1.57479 28.9026C1.58694 28.9026 1.60112 28.8985 1.6153 28.8965L1.6153 28.8985Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                        <path d="M6.846 26.0677L6.83992 26.0637L6.86018 26.0454L6.87638 26.0312L15.2363 33.9237L6.846 26.0677Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                        <path d="M9.39941 33.1784L5.33794 27.4328L5.3744 27.4004L5.37846 27.4044L9.39941 33.1784Z" fill="white" stroke="var(--color-bg-3)" stroke-miterlimit="10" />
+                    </g>
+                    <defs>
+                        <filter id="filter0_i_776_4538" x="0.894531" y="0.957031" width="21.1084" height="44.0781" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                            <feOffset dy="4" />
+                            <feGaussianBlur stdDeviation="2" />
+                            <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1" />
+                            <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+                            <feBlend mode="normal" in2="shape" result="effect1_innerShadow_776_4538" />
+                        </filter>
+                    </defs>
+                </svg>
+
+            </div>
+        </section>  
+    </main>
+
+    {{>Footer}}
+    {{>CommonScripts}}
+
+</body>
+</html>
